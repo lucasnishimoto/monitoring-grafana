@@ -1,0 +1,38 @@
+version: '2'
+
+networks:
+  net:
+    external:
+      name: treinamento
+
+services:
+  redis:
+    ports: 
+    - 6379:6379
+    image: redis
+    volumes:
+    - /data/dump.rdb:/data/dump.rdb
+    networks:
+      - net
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - net
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    networks:
+      - net
+    environment:
+      - INFLUXDB_DB=teste
+      - INFLUXDB_USER=teste
+      - INFLUXDB_ADMIN_ENABLED=true
+      - INFLUXDB_ADMIN_USER=teste
+      - INFLUXDB_ADMIN_PASSWORD=teste
