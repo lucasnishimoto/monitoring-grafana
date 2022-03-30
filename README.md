@@ -1,7 +1,7 @@
 # Monitorando com Grafana
 ## _Redis, Influxdb e Grafana_
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)]()
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://github.com/lucasnishimoto)
 
 ## Pré-requisitos 
 
@@ -12,6 +12,7 @@
 ## Estrutura
 
 **Redis** 
+
 O Redis vai ser o banco de dados, na qual vai ter as informações de hostname e ip, exemplo:
 
 ```
